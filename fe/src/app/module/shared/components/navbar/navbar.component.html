@@ -1,0 +1,71 @@
+<div class="fixed top-0 z-50 right-0 left-0 bg-slate-100 text-gray-800">
+  <div class="lg:px-20 px-5 h-16 flex items-center justify-between">
+    <div class="flex items-center">
+      <div class="mr-5">
+        <img src="../../assets/img/oriz_logo.png" class="w-24" alt="Oriz" />
+      </div>
+
+      <div class="">
+        <div class="flex items-center space-x-4">
+          <!-- <div>
+            <a routerLink="/" href="#" class="text-gray-800">Oriz</a>
+          </div> -->
+
+          <div>
+            <button
+              class="open-btn"
+              color="black"
+              (click)="openNavbarContent('products')"
+              mat-button
+            >
+              Products
+            </button>
+          </div>
+
+          <div>
+            <button
+              class="open-btn"
+              (click)="openNavbarContent('accessories')"
+              color="black"
+              mat-button
+            >
+              Accessories
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-center">
+      <button (click)="navigateTo('cart')" mat-icon-button>
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+
+      <button *ngIf="true" mat-button color="black">LOGIN</button>
+
+      <div *ngIf="false" class="relative ml-3 flex items-center">
+        <div class="flex items-center space-x-5">
+          <span class="font-bold text-lg">Oriz</span>
+          <button mat-button [matMenuTriggerFor]="accountMenu">
+            <img
+              class="h-6 w-6"
+              src="https://cdn.pixabay.com/photo/2014/04/03/11/47/avatar-312160_640.png"
+              alt=""
+            />
+          </button>
+          <mat-menu class="" #accountMenu="matMenu">
+            <button (click)="navigateTo('account/orders')" mat-menu-item>Orders</button>
+            <button mat-menu-item>Profile</button>
+            <button mat-menu-item>Logout</button>
+          </mat-menu>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    *ngIf="isNavbarContentOpen"
+    class="absolute right-0 left-0 modal-container"
+  >
+    <app-nav-content [selectedSection]="currentSection" />
+  </div>
+</div>

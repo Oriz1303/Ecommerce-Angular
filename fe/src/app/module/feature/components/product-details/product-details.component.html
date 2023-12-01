@@ -1,0 +1,167 @@
+<div class="p-5 lg:p-10 mt-10">
+    <p class="text-gray-600 py-10">product/clothes/men/polo</p>
+    <section class="lg:grid grid-cols-3 lg:gap-10">
+        <div class="col-span-2 flex flex-col items-center">
+            <img src="https://aristino.com/Data/ResizeImage/images/product/ao-polo/aps167s3/1-09-1-x500x500x4.webp"
+                alt="">
+        </div>
+
+        <div class="col-span-1 space-y-10">
+            <div class="space-y-2">
+                <p class="font-semibold text-gray-500 text-lg ">Polo</p>
+                <p class="text-xl">Short-sleeved Shirt Aristino APS167S3</p>
+            </div>
+
+            <div class="flex items-center space-x-5">
+                <p class="text-lg">$199</p>
+                <p class="text-lg text-gray-700 line-through">$299</p>
+                <p class="text-lg">20%</p>
+            </div>
+
+            <div class="text-black">
+                <p class="text-lg font-semibold"></p>
+                <mat-radio-group class="space-x-5" aria-label="Select an option" [(ngModel)]="selectedSize">
+                    <mat-radio-button value="S"><span class="text-black">S</span></mat-radio-button>
+                    <mat-radio-button value="M"><span class="text-black">M</span></mat-radio-button>
+                    <mat-radio-button value="L"><span class="text-black">L</span></mat-radio-button>
+                </mat-radio-group>
+            </div>
+
+            <div>
+                <button color="" style="padding: 1.5rem;" class=" w-full" (click)="handleAddToCart()"
+                    mat-raised-button>Add to Cart</button>
+            </div>
+
+            <div class="text-gray-600">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, temporibus deserunt explicabo quo
+                    iusto totam odio quod eaque accusantium est consequatur aspernatur eius! Dolorum ratione fugiat
+                    animi, voluptates enim expedita.</p>
+
+                <p class="text-gray-600">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto officiis
+                    quidem, doloremque maiores ducimus enim a commodi corporis totam voluptates natus ut cupiditate
+                    neque sapiente magni quis temporibus autem facilis.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pt-20 pb-10 px-5 lg:px-20">
+        <h1 class="font-semibold text-lg pb-4">Recent Review & Rating</h1>
+        <div class="border border-[#1a1a1a] rounded-md p-5">
+            <div class="lg:grid grid-cols-12 gap-7">
+                <div class="col-span-7">
+                    <div class="space-y-2">
+                        <div *ngFor="let item of reviews">
+                            <app-product-review-card />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-span-5 mt-10 lg:mt-0">
+                    <div class="box">
+                        <h1 class="text-xl font-semibold pb-1">Product Ratings</h1>
+                        <div class="flex items-center space-x-3 pb-10">
+                            <app-start-rating/>
+                            <p class="opacity-60">3000 Ratings</p>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div>
+                                <div class="grid grid-cols-12 justify-around items-center">
+                                    <div class="col-span-2">
+                                        <span>Excellent</span>
+                                    </div>
+
+                                    <div class="col-span-8 px-4">
+                                        <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+
+                                    </div>
+
+                                    <div class="col-span-2">
+                                        <span class="opacity-50">1232</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="grid grid-cols-12 justify-around items-center">
+                                    <div class="col-span-2">
+                                        <span>Excellent</span>
+                                    </div>
+
+                                    <div class="col-span-8 px-4">
+                                        <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+
+                                    </div>
+
+                                    <div class="col-span-2">
+                                        <span class="opacity-50">1232</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="grid grid-cols-12 justify-around items-center">
+                                    <div class="col-span-2">
+                                        <span>Excellent</span>
+                                    </div>
+
+                                    <div class="col-span-8 px-4">
+                                        <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+
+                                    </div>
+
+                                    <div class="col-span-2">
+                                        <span class="opacity-50">1232</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="grid grid-cols-12 justify-around items-center">
+                                    <div class="col-span-2">
+                                        <span>Excellent</span>
+                                    </div>
+
+                                    <div class="col-span-8 px-4">
+                                        <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+
+                                    </div>
+
+                                    <div class="col-span-2">
+                                        <span class="opacity-50">1232</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="grid grid-cols-12 justify-around items-center">
+                                    <div class="col-span-2">
+                                        <span>Excellent</span>
+                                    </div>
+
+                                    <div class="col-span-8 px-4">
+                                        <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+
+                                    </div>
+
+                                    <div class="col-span-2">
+                                        <span class="opacity-50">1232</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="mt-10">
+        <h1>Related Products</h1>
+
+        <div class="flex justify-around flex-wrap">
+            <div *ngFor="let item of relatedProducts">
+                <app-product-card [product]="item"/>
+            </div>
+        </div>
+
+
+    </section>
+</div>

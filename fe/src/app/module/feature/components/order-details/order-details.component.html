@@ -1,0 +1,20 @@
+<div class="py-20 px-5 lg:px-20">
+  <div class="py-5">
+    <h2 class="text-center py-2">Order Status</h2>
+    <app-order-tracker activeStep="PLACED" [steps]="steps"/>
+  </div>
+
+  <div class="space-y-10 pt-10">
+    <div class="box px-10">
+      <h1 class="text-lg font-semibold py-5">Delivery Address</h1>
+
+      <app-address-card />
+    </div>
+
+    <div class="space-y-6 mt-20">
+      <div *ngFor="let orderItems of orders">
+        <app-order-card />
+      </div>
+    </div>
+  </div>
+</div>
