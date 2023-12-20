@@ -3,18 +3,18 @@
     <div class="w-[5rem] h-[5rem] lg:w-[9rem] lg:h-[9rem]">
       <img
         class="w-full h-full object-cover object-top"
-        src="https://aristino.com/Data/ResizeImage/images/product/ao-polo/aps167s3/1-09-1-x500x500x4.webp"
+        [src]="cartItem?.product?.imageUrl"
         alt=""
       />
     </div>
 
     <div class="ml-5 space-y-1">
-      <p class="font-semibold">Lorem ipsum dolor sit amet consectetur.</p>
+      <p class="font-semibold">{{ cartItem?.product?.title }}</p>
       <p class="text-gray-600">Size: M, Red</p>
       <p class="mt-2 text-gray-600">Seller: Oriz</p>
 
       <div class="flex space-x-2 items-center pt-3">
-        <p class="line-through">$199</p>
+        <p class="line-through">${{ cartItem?.discountedPrice }}</p>
         <p class="font-semibold text-lg">$199</p>
         <p class="text-green-600 font-semibold">30%</p>
       </div>
@@ -31,22 +31,25 @@
       <button
         mat-mini-fab
         color="accent"
-        (click)="updateCartItem(-1)"
-        [disabled]="true"
+        (click)="updateCartItems(-1)"
+        [disabled]="cartItem.quantity === 1 ? 'true' : 'false'"
       >
+        <!--  -->
         <mat-icon>remove</mat-icon>
       </button>
     </div>
 
     <div>
-      <span class="py-1 px-7 border border-gray-800 rounded-sm"> 1 </span>
+      <span class="py-1 px-7 border border-gray-800 rounded-sm">{{
+        cartItem.quantity
+      }}</span>
     </div>
 
     <div class="example-button-container">
       <button
         mat-mini-fab
-        color="accent"
-        (click)="updateCartItem(1)"
+        color="primary"
+        (click)="updateCartItems(1)"
         [disabled]="false"
       >
         <mat-icon>add</mat-icon>

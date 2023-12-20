@@ -12,6 +12,7 @@ import { StartRatingComponent } from './components/start-rating/start-rating.com
 import { CartItemsComponent } from './components/cart-items/cart-items.component';
 import { AddressCardComponent } from './components/address-card/address-card.component';
 import { OrderTrackerComponent } from './components/order-tracker/order-tracker.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { OrderTrackerComponent } from './components/order-tracker/order-tracker.
     MatButtonModule,
     MatMenuModule,
     MatDividerModule,
+    MatDialogModule
   ],
   exports: [
     NavbarComponent,
@@ -39,6 +41,7 @@ import { OrderTrackerComponent } from './components/order-tracker/order-tracker.
     CartItemsComponent,
     AddressCardComponent,
     OrderTrackerComponent,
+    
   ],
 })
 export class SharedModule {}

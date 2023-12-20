@@ -1,9 +1,9 @@
 <div class="space-y-3">
-    <p class="font-semibold">Oriz</p>
-    <p>Dinh Cong, Hanoi</p>
+  <p class="font-semibold">{{ address.lastName + " " + address.firstName }}</p>
+  <p>{{address.streetAddress}}, {{ address.city }}</p>
 
-    <div class="space-y-1">
-        <p class="font-semibold">Phone Number</p>
-        <p>01235454553</p>
-    </div>
+  <div class="space-y-1">
+    <p class="font-semibold">Phone Number</p>
+    <p>{{address.mobile}}</p>
+  </div>
 </div>

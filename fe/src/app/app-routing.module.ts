@@ -13,15 +13,14 @@ import { AdminRoutingModule } from './module/admin/admin-routing.module';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'account/orders', component: OrderComponent },
   { path: 'order/:id', component: OrderDetailsComponent },
-  { path: 'products/:levelOne/:levelTwo', component: ProductsComponent },
   { path: 'checkout/payment/:id', component: PaymentComponent },
   { path: 'payment-success', component: PaymentSuccessComponent },
   { path: 'product-details/:id', component: ProductDetailsComponent },
+  { path: ':levelOne/:levelTwo/:levelThree', component: ProductsComponent },
 
   {
     path: 'admin',

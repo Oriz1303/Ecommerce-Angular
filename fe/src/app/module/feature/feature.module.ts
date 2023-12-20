@@ -27,6 +27,9 @@ import { AddressFormComponent } from './components/checkout/address-form/address
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { OrderCardComponent } from './components/order/order-card/order-card.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TestComponent } from './components/products/test.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,7 @@ import { OrderCardComponent } from './components/order/order-card/order-card.com
     ProductReviewCardComponent,
     AddressFormComponent,
     OrderCardComponent,
+    TestComponent,
   ],
   imports: [
     CommonModule,
@@ -53,7 +57,6 @@ import { OrderCardComponent } from './components/order/order-card/order-card.com
     MatButtonModule,
     MatDividerModule,
     MatIconModule,
-    FormsModule,
     MatCheckboxModule,
     MatRadioModule,
     SharedModule,
@@ -62,6 +65,8 @@ import { OrderCardComponent } from './components/order/order-card/order-card.com
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
+    MatPaginatorModule,
+    BrowserAnimationsModule,
   ],
   exports: [FeatureComponent, HomeComponent, ProductsComponent],
 })

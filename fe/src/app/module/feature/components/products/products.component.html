@@ -1,5 +1,5 @@
 <div class="flex flex-col items-center">
-  <main class="px-4 sm:px-6 max-w-7xl  pb-10">
+  <main class="px-4 sm:px-6 max-w-7xl pb-10">
     <div class="flex items-baseline justify-between border-gray-200 pb-6 pt-24">
       <h1 class="text-4xl font-bold">Products</h1>
       <div class="flex items-center">
@@ -8,8 +8,30 @@
             Sort
           </button>
           <mat-menu #sortProducts="matMenu">
-            <button mat-menu-item>Price: high-low</button>
-            <button mat-menu-item>Price: low-high</button>
+            <button
+              (click)="handleSingleSelectFilter('price_high', 'sort')"
+              mat-menu-item
+            >
+              Price: high-low
+            </button>
+            <button
+              (click)="handleSingleSelectFilter('price_low', 'sort')"
+              mat-menu-item
+            >
+              Price: low-high
+            </button>
+            <button
+              (click)="handleSingleSelectFilter('a_z', 'sort')"
+              mat-menu-item
+            >
+              Title: A-Z
+            </button>
+            <button
+              (click)="handleSingleSelectFilter('z_a', 'sort')"
+              mat-menu-item
+            >
+              Title: Z-A
+            </button>
           </mat-menu>
         </div>
       </div>
@@ -37,7 +59,9 @@
                           [name]="item.id"
                           [value]="option.value"
                           color="primary"
-                          (click)="handleMultipleSelectFilters(option.value, item.id)"
+                          (click)="
+                            handleMultipleSelectFilters(option.value, item.id)
+                          "
                         >
                           <span class="text-sm text-gray-500">{{
                             option.label
@@ -66,7 +90,9 @@
                           [name]="item.id"
                           [value]="option.value"
                           color="primary"
-                          (click)="handleSingleSelectFilter(option.value, item.id)"
+                          (click)="
+                            handleSingleSelectFilter(option.value, item.id)
+                          "
                         >
                           <span class="text-sm text-gray-500">{{
                             option.label
@@ -83,14 +109,24 @@
           </form>
         </div>
 
-        <div class="lg: col-span-3">
+        <div class="lg:col-span-3">
           <div class="flex flex-wrap justify-evenly">
-            <ng-container *ngFor="let item of mensPolo">
-              <app-product-card [product]="item"/>
+            <ng-container *ngFor="let item of products.content">
+              <app-product-card [product]="item" />
             </ng-container>
           </div>
         </div>
       </div>
     </section>
   </main>
+
+  <div>
+    <mat-paginator
+      [length]="products.totalElements"
+      [pageSizeOptions]="[9, 12]"
+      aria-label="Select page"
+      (page)="handlePaginator($event)"
+    >
+    </mat-paginator>
+  </div>
 </div>

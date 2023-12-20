@@ -1,7 +1,7 @@
 <div class="mt-24 space-y-5 px-5 lg:px-20">
   <ng-container>
     <div class="p-5 shadow-lg rounded-md box my-5">
-      <app-address-card />
+      <app-address-card [address]="order.shippingAddress"/>
     </div>
 
     <div
@@ -9,8 +9,8 @@
     >
       <div class="col-span-2">
         <div class="space-y-3 box rounded-sm">
-          <div *ngFor="let product of products; let last = last">
-            <app-cart-items [showButton]="false"/>
+          <div *ngFor="let item of order.orderItems; let last = last">
+            <app-cart-items [cartItem]="item" [showButton]="false" />
             <mat-divider *ngIf="!last"> </mat-divider>
           </div>
         </div>

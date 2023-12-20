@@ -1,1 +1,9 @@
-<p>auth works!</p>
+<!-- <ng-container > -->
+<ng-container *ngIf="isLoggined; else registerComponent">
+  <app-login [changeTemplate]="changeTemplates" />
+  <!-- <app-register/> -->
+</ng-container>
+
+<ng-template #registerComponent>
+  <app-register [changeTemplate]="changeTemplates" />
+</ng-template>

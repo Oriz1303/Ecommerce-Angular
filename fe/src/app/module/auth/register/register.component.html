@@ -1,1 +1,98 @@
-<p>register works!</p>
+<div class="overflow-hidden text-center p-4 shadow-lg">
+  <form (ngSubmit)="submitForm()" [formGroup]="registerForm">
+    <h1 class="text-center">Register</h1>
+
+    <div class="">
+      <mat-form-field class="w-[50%]">
+        <mat-label>First Name</mat-label>
+        <input
+          matInput
+          formControlName="firstName"
+          required
+          type="text"
+          firstName
+        />
+        <mat-error
+          *ngIf="registerForm.controls['firstName'].hasError('required')"
+        >
+          First Name is required! Please enter
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-[50%]">
+        <mat-label>Last Name</mat-label>
+        <input
+          matInput
+          formControlName="lastName"
+          required
+          type="text"
+          lastName
+        />
+        <mat-error
+          *ngIf="registerForm.controls['lastName'].hasError('required')"
+        >
+          Last Name is required! Please enter
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-full">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required type="text" />
+        <mat-error *ngIf="registerForm.controls['email'].hasError('required')"
+          >Email is required! Please enter</mat-error
+        >
+        <mat-error *ngIf="registerForm.controls['email'].hasError('email')"
+          >Please enter valid email</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field class="w-full">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          formControlName="password"
+          required
+          password
+          [type]="hidePassword ? 'password' : 'text'"
+        />
+
+        <mat-icon
+          (click)="toggleVisibility()"
+          class="absolute top-4 right-0"
+          color="primary"
+          >{{ hidePassword ? "visibility_off" : "visibility" }}</mat-icon
+        >
+
+        <!-- Validation Required -->
+        <mat-error
+          *ngIf="registerForm.controls['password'].hasError('required')"
+        >
+          Password is required! Please enter
+        </mat-error>
+        <mat-error
+          *ngIf="registerForm.controls['password'].hasError('pattern')"
+        >
+          Minimum eight characters, at least one uppercase letter, one lowercase
+          letter and one number
+        </mat-error>
+      </mat-form-field>
+
+      <div>
+        <button
+          class="w-full"
+          style="padding: 1rem"
+          mat-raised-button
+          color="accent"
+        >
+          Register
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="mt-2">
+    <span> Already an account? </span>
+    <button color="primary" (click)="changeTemplate()" mat-raised-button>
+      Login
+    </button>
+  </div>
+</div>

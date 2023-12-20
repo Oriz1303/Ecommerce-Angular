@@ -6,7 +6,15 @@
         *ngFor="let item of category[selectedSection].sections"
       >
         <h1 class="text-center">{{ item.name }}</h1>
-        <button mat-button *ngFor="let section of item.items">
+        <button
+          (click)="
+            handleNavigate(
+              '/' + selectedSection + '/' + item.id + '/' + section.name
+            )
+          "
+          mat-button
+          *ngFor="let section of item.items"
+        >
           {{ section.name }}
         </button>
       </div>

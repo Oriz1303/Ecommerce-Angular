@@ -1,1 +1,68 @@
-<p>login works!</p>
+<div class="overflow-hidden text-center p-4 shadow-lg">
+  <form (ngSubmit)="submitForm()" [formGroup]="loginForm">
+    <h1 class="text-center">Login</h1>
+
+    <div class="">
+      <!-- Email Field BEGIN -->
+      <mat-form-field class="w-full">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required email type="text" />
+        <mat-error *ngIf="loginForm.controls['email'].hasError('required')"
+          >Email is required! Please enter</mat-error
+        >
+        <mat-error *ngIf="loginForm.controls['email'].hasError('email')"
+          >Please enter valid email</mat-error
+        >
+      </mat-form-field>
+      <!-- Email Field END -->
+
+      <!-- Password Field BEGIN -->
+      <mat-form-field class="w-full">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          formControlName="password"
+          required
+          password
+          [type]="hidePassword ? 'password' : 'text'"
+        />
+        <mat-icon
+          (click)="toggleVisibility()"
+          class="absolute top-4 right-0"
+          color="primary"
+          >{{ hidePassword ? "visibility_off" : "visibility" }}</mat-icon
+        >
+        <mat-error *ngIf="loginForm.controls['password'].hasError('required')">
+          Password is required! Please enter
+        </mat-error>
+        <mat-error *ngIf="loginForm.controls['password'].hasError('pattern')">
+          Minimum eight characters, at least one uppercase letter, one lowercase
+          letter and one number
+        </mat-error>
+        <!-- <mat-error *ngIf="loginForm.controls['password'].hasError('pattern')">
+          Password must have 8 characters, 1 uppercase, 1 number
+        </mat-error> -->
+      </mat-form-field>
+      <!-- Password Field END -->
+
+      <div class="">
+        <button
+          class="w-full"
+          style="padding: 1rem"
+          mat-raised-button
+          color="accent"
+        >
+          Login
+        </button>
+      </div>
+
+      
+    </div>
+  </form>
+  <div class="mt-2">
+        <span> If u dont have an account? </span>
+        <button color="primary" (click)="changeTemplate()" mat-raised-button>
+          Register
+        </button>
+      </div>
+</div>

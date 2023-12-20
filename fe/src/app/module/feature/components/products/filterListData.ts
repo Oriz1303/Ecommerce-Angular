@@ -7,7 +7,7 @@ export const filters = [
       { value: 'white', label: 'White' },
       { value: 'black', label: 'Black' },
       { value: 'red', label: 'Red' },
-      { value: 'beige', label: 'Beige' },
+      { value: 'brown', label: 'Brown' },
       { value: 'pink', label: 'Pink' },
       { value: 'green', label: 'Green' },
       { value: 'yellow', label: 'Yellow' },
@@ -18,8 +18,8 @@ export const filters = [
     name: 'Size',
     options: [
       { value: 's', label: 'S' },
-      { value: 'M', label: 'M' },
-      { value: 'L', label: 'L' },
+      { value: 'm', label: 'M' },
+      { value: 'l', label: 'L' },
     ],
   },
 ];
@@ -63,4 +63,6 @@ export const singleFilter = [
 export const sortOptions = [
   { name: 'Price: Low to High', query: 'price_low', current: false },
   { name: 'Price: High to Low', query: 'price_high', current: false },
+  { name: 'Title: A-Z', query: 'a_z', current: false },
+  { name: 'Title: Z-A', query: 'z_a', current: false },
 ];

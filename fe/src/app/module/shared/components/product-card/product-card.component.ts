@@ -13,7 +13,7 @@ export class ProductCardComponent {
 
   }
 
-  navigate() {
-    this.router.navigate([`/product-details/${5}`])
+  navigate(id: any) {
+    this.router.navigate([`/product-details/${this.product.id}`])
   }
 }
